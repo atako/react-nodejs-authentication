@@ -8,7 +8,9 @@ const router = require('./router');
 app.use(morgan('combined'));
 app.use(bodyParser.json({ type: '*/*' }));
 router(app);
+const mongoose = require('mongoose');
 
+mongoose.connect('mongodb://mongo:auth/auth');
 
 //Server Setup
 const port = process.env.PORT || 3050;
